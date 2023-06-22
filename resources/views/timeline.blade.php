@@ -11,7 +11,7 @@
     <div class="wrapper">
       <form action="">
         <div class="post-box">
-            <input type="text" name="tweet" placeholder="いまなにしてる？">
+            <input type="text" name="tweet" placeholder="今なにしてる？">
             <button type="submit" class="submit-btn">ツイート</button>
         </div>
       </form>
