@@ -9,8 +9,9 @@ class TweetController extends Controller
 {
     //
     public function showTimelinePage()
-    {
-        return view('timeline');
+    {   
+        $tweets =Tweet::latest()->get();
+        return view('timeline', ['tweets' => $tweets]);
     }
 
     public function postTweet(Request $request)
@@ -24,5 +25,13 @@ class TweetController extends Controller
         ]);
 
         return back();
+    }
+
+    public function destroy($id)
+    {
+        $tweet = Tweet::find($id);
+        $tweet->delete();
+
+        return redirect()->route('timeline');
     }
 }
