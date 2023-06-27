@@ -27,3 +27,9 @@ Route::post('/timeline', 'App\Http\Controllers\TweetController@postTweet');
 Route::post('/timeline/delete/{id}', 'App\Http\Controllers\TweetController@destroy')->name('destroy');
 
 Route::get('/user/show{id}', 'App\Http\Controllers\UserController@show')->name('show');
+
+// いいねを作成
+Route::get('tweets/{tweet_id}/likes', 'App\Http\Controllers\LikeController@store');
+
+// いいねを取り消す
+Route::get('likes/{like_id}/likes', 'App\Http\Controllers\LikeController@destroy');
